@@ -19,11 +19,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			loadSomeData: () => {
+			planetsData: () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
-			},
+
+				
+				var myHeaders = new Headers();
+				myHeaders.append("Content-Type", "application/json");
+				
+				var raw = JSON.stringify([]);
+				
+				var requestOptions = {
+					method: 'GET',
+					headers: myHeaders,
+					// body: raw,
+					redirect: 'follow'
+				};
+
+				//const [planetName, setPlanetName] = useState([]) ------------- EMILIO CONTINUAR CON ESTO
+				
+				fetch("https://www.swapi.tech/api/planets/1/", requestOptions)
+				.then(response => response.json())
+				//.then(result => setPlanetName(result)) ------------- EMILIO CONTINUAR CON ESTO
+				.then(result => console.log(result))
+				.catch(error => console.log('error', error));
+				},
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
