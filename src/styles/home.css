@@ -1,4 +1,15 @@
-.card{
-    width: 18rem
-    
+body{
+    background-color: #2E2E2E;
+    overflow-x: hidden;
+}
+.cardLot{
+    display: inline-flex;
+    flex-direction: row;
+}
+.cards{
+    scrollbar-color: red orange;
+    scrollbar-width: thin;
+}
+.cards:hover{
+    overflow-x: scroll;
 }

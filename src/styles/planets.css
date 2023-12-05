@@ -1,19 +1,4 @@
-body{
-    background-color: #2E2E2E;
-    overflow-x: hidden;
-}
-h1{
-    color:white;
-}
-.cardLot{
-    display: flex;
-    flex-direction: row;
-    scrollbar-color: red orange;
-    scrollbar-width: thin;
-}
-.cardLot:hover{
-    overflow-x: scroll;
-}
+
 .card{
-    background-color: gray;
-}
+    width: 200px;
+} 

@@ -15,7 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			planetsInfo:[],
 		},
-		actions: {
+			actions: {
 			// Use getActions to call a function within a fuction
 			
 
@@ -24,17 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(response => response.json())
 				.then((data) => setStore({planetsInfo: data.results}))
 			},
-
 			
-
-
-
-
-
-
-
-
-
 
 
 
