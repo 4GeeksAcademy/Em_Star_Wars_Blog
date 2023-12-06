@@ -3,8 +3,6 @@ import React, {useContext, useState, useEffect}  from "react";
 import propTypes from "prop-types";
 import "../../styles/planets.css";
 import { Link } from "react-router-dom";
-import { SpecificPlanet } from "./specificPlanet.jsx";
-
 
 
 export const planets = (props) => {
@@ -24,7 +22,7 @@ export const planets = (props) => {
                     <h5 className="card-title">{props.name}</h5>
                         <p className="card-text"><strong>Terrain: </strong>{planetData.terrain}</p>
                         <p className="card-text"><strong>Population: </strong> {planetData.population}</p>
-                    <Link to="/demo">
+                    <Link to="/specificPlanet">
                         <a href="#" className="btn btn-primary">See more</a>
                     </Link>
                 </div>
