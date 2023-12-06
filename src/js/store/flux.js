@@ -14,6 +14,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			planetsInfo:[],
+			specificPlanetData:[],
+			starshipsInfo:[]
 		},
 			actions: {
 			// Use getActions to call a function within a fuction
@@ -24,7 +26,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(response => response.json())
 				.then((data) => setStore({planetsInfo: data.results}))
 			},
-			
+			//  innerPlanetsData: (uid) => {
+			// 	fetch("https://www.swapi.tech/api/planets/" + uid)
+			// 	.then(response => response.json())
+			// 	.then((data) => setStore({specificPlanetData: data.result.properties}))
+			//  },
+			starshipsData: () => {
+				fetch("https://www.swapi.tech/api/starships",)
+				.then(response => response.json())
+				.then((data) => setStore({starshipsInfo: data.results}))
+			},
 
 
 

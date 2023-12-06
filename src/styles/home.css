@@ -2,14 +2,25 @@ body{
     background-color: #2E2E2E;
     overflow-x: hidden;
 }
-.cardLot{
+h1{
+    color: white;
+    text-align: center;
+}
+.planetLot{
     display: inline-flex;
     flex-direction: row;
 }
-.cards{
+.planetCards{
     scrollbar-color: red orange;
     scrollbar-width: thin;
 }
-.cards:hover{
+.planets:hover{
     overflow-x: scroll;
+}
+.starshipLot{
+    display: inline-flex;
+    flex-direction: row;
+}
+.starships:hover{
+    overflow-x: scroll
 }
