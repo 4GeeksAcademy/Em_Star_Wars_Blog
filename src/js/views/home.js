@@ -24,7 +24,7 @@ export const Home = () => {
 			<div className="starships text-center mt-5">
 				<div className="starshipCards">
 					<div className="starshipLot text-center mt-5">
-						{store.starshipsInfo.map((item)=>	<Starships uid={item.uid} key={item.url} name={item.name}/>)}
+						{store.starshipsInfo.map((item)=><Starships uid={item.uid} key={item.url} name={item.name}/>)}
 					</div>
 				</div>
 			</div>

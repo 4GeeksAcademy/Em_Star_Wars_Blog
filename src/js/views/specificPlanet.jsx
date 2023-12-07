@@ -1,35 +1,35 @@
 import { Context } from "../store/appContext";
 import React, {useContext, useState, useEffect}  from "react";
 import propTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 export const specificPlanet = (props) => {
      const {store, actions} = useContext(Context)
-
-    //  {store.planetsInfo.map((item)=> setBasicInfo(item.uid,item.url, item.name))}
-
        const [myPlanet, setMyPlanet] = useState({})
-    //    const [basicInfo, setBasicInfo] = useState({})
 
-          fetch("https://www.swapi.tech/api/planets/1")
-             .then(response => response.json())
-             .then((data) => setMyPlanet(data.result.properties))
+    const params = useParams();
+
+       useEffect(()=>{
+           fetch("https://www.swapi.tech/api/planets/" + params.uid)
+           .then(response => response.json())
+           .then((data) => setMyPlanet(data.result.properties))
+        },[])
 
     return(
         <>  
-            <div className="card mx-1 w-4" key={props.url}>
-                <h1>{myPlanet.name}</h1>
+            <div className="card mx-1" key={props.url}>
+                <h1 className="text-dark">{myPlanet.name}</h1>
                 <ul>
-                    <li>Diameter: {myPlanet.diameter}</li>
-                    <li>Rotation period: {myPlanet.rotation_period}</li>
-                    <li>Orbital period: {myPlanet.orbital_period}</li>
-                    <li>Gravity: {myPlanet.gravity}</li>
-                    <li>Population: {myPlanet.population}</li>
-                    <li>Climate: {myPlanet.climate}</li>
-                    <li>Terrain: {myPlanet.terrain}</li>
-                    <li>Surface water: {myPlanet.surface_water}</li>
-                    <li>Created: {myPlanet.created}</li>
+                    <li><strong>Diameter: </strong> {myPlanet.diameter}</li>
+                    <li><strong>Rotation period: </strong>{myPlanet.rotation_period}</li>
+                    <li><strong>Orbital period: </strong>{myPlanet.orbital_period}</li>
+                    <li><strong>Gravity: </strong> {myPlanet.gravity}</li>
+                    <li><strong>Population: </strong>{myPlanet.population}</li>
+                    <li><strong>Climate:  </strong>{myPlanet.climate}</li>
+                    <li><strong>Terrain: </strong>{myPlanet.terrain}</li>
+                    <li><strong>Surface water: </strong>{myPlanet.surface_water}</li>
+                    <li><strong>Created: </strong>{myPlanet.created}</li>
                 </ul>
             </div>
         </>
