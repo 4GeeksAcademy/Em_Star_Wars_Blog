@@ -29,6 +29,7 @@ export const planets = (props) => {
                     <Link to={"/specificPlanet/" + props.uid}>
                         <button href="#" className="btn btn-primary">See more</button>
                     </Link>
+                    <button onClick={()=>actions.addToFavs(props.name)} className="btn btn-primary"><i className="bi bi-heart"/></button>
                 </div>
             </div>
         </>

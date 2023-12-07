@@ -1,7 +1,10 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+import React, { useContext }  from "react";
+
 
 export const Navbar = () => {
+	const {store, actions} = useContext(Context)
 	return (
 		<>
 			<nav className="navbar navbar-light bg-light mb-3">
@@ -20,7 +23,7 @@ export const Navbar = () => {
 				</div>
 			</nav>
 
-			<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div className="modal-dialog">
 					<div className="modal-content">
 					<div className="modal-header">
@@ -29,11 +32,7 @@ export const Navbar = () => {
 					</div>
 					<div className="modal-body">
 						<ul>
-
-							<li>
-								HOLA COCACOLA
-							</li>
-
+							{/* {store.myFavs.map((name)=> <li>{name}</li>)} */}
 						</ul>
 					</div>
 					<div className="modal-footer">
