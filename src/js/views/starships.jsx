@@ -8,19 +8,21 @@ export const starships = (props) => {
     const {store, actions} = useContext(Context)
     const params = useParams(props.uid);
 
-
     const [starshipsData, setStarshipsData] = useState({})
 
-    useEffect(()=>{
+    // useEffect(()=>{
         fetch("https://www.swapi.tech/api/starships/" + props.uid)
         .then(response => response.json())
         .then((data) => setStarshipsData(data.result.properties))
-    })
-
+    // })
+    var imageURL = "https://starwars-visualguide.com/assets/img/starships/" + props.uid + ".jpg"
 return(
    <>  
        <div className="card mx-1" key={props.url}>
-           <img src="..." className="card-img-top" alt="..."/>
+           <img src={imageURL} onError={({ currentTarget }) => {
+                    currentTarget.onerror = null; // prevents looping
+                    currentTarget.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+                }} className="card-img-top" alt="..."/>
            <div className="card-body" id={props.uid}>
                <h5 className="card-title">{props.name}</h5>
                <h5 className="card-title">{props.uid}</h5>

@@ -5,6 +5,7 @@ import React, { useContext }  from "react";
 
 export const Navbar = () => {
 	const {store, actions} = useContext(Context)
+	{console.log(store.myFavs)}
 	return (
 		<>
 			<nav className="navbar navbar-light bg-light mb-3">
@@ -32,7 +33,7 @@ export const Navbar = () => {
 					</div>
 					<div className="modal-body">
 						<ul>
-							{/* {store.myFavs.map((name)=> <li>{name}</li>)} */}
+							{store.myFavs.map((item)=> <li id={item.uid}>{item}</li>)}
 						</ul>
 					</div>
 					<div className="modal-footer">
@@ -42,7 +43,6 @@ export const Navbar = () => {
 					</div>
 				</div>
 			</div>
-
 		</>
 	);
 };

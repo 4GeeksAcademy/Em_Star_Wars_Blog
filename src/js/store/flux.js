@@ -32,10 +32,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(response => response.json())
 				.then((data) => setStore({starshipsInfo: data.results}))
 			},
-			 addToFavs: (name) => {
-				console.log("name is: " , name)
-			 	 setStore({myFavs: name})
-			 },
+			  addToFavs: (planets) => {
+				const store = getStore();
+				setStore({myFavs: [...store.myFavs, planets]})
+			},
+
+		
+			
+			// addToFavs: (favName) => {
+
+			// 	const store = getStore();
+
+			// 		if (store.myFavs.includes(favName)) {
+			// 			setStore({ myFavs: store.myFavs.filter((duplicate) => duplicate != favName) });
+			// 		}
+			// 		else {
+			// 			setStore({ myFavs: [...store.myFavs, favName] });
+			// 		}
+			// 	},
+		
+
 
 
 
