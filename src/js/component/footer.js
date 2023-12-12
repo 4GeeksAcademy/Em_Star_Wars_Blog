@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 
 export const Footer = () => (
-	<footer className="footer mt-auto py-3 text-center">
-		<p>
-			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
-		</p>
+	<footer className="footer mt-auto py-3 text-center" style={{ color: 'white' }}>
+		<h3>
+			STAR-WARS 
+		</h3>
+		<h3>
+			Planets & Starships Blog
+		</h3>
 	</footer>
 );
